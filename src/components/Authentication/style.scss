@@ -1,0 +1,47 @@
+@media (min-width: 475px) {
+    .back {
+        background: url('../../img/login414x736.jpg');
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        -webkit-background-size: cover;
+        width: 100vw;
+        position: fixed;
+        background-repeat: no-repeat;
+    }
+
+}
+
+.back {
+    background: url('../../img/login1000x1000.jpg');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    width: 100vw;
+    position: fixed;
+    background-repeat: no-repeat;
+}
+
+.form {       
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    flex-direction: column;
+}
+
+.text1 {
+    margin-top: 16px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-family: Montzerrat, sans-serif;
+    text-align: center;
+}
+.inputTel {
+    background: none;
+    background-color: transparent;
+    font-size: 18px;
+    color: white;
+}
