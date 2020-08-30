@@ -1,6 +1,6 @@
 @media (min-width: 475px) {
     .back {
-        background: url('../../img/login414x736.jpg');
+        background: url('../../img/Login/login414x736.jpg');
         height: 100vh;
         background-repeat: no-repeat;
         background-size: cover;
@@ -13,7 +13,7 @@
 }
 
 .back {
-    background: url('../../img/login1000x1000.jpg');
+    background: url('../../img/Login/login1000x1000.jpg');
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
@@ -23,25 +23,75 @@
     background-repeat: no-repeat;
 }
 
-.form {       
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-    align-items: center;
-    flex-direction: column;
+.logoLogin{
+    margin-top: 0rem;
 }
-
-.text1 {
+.textInput {
     margin-top: 16px;
     color: white;
     justify-content: center;
     align-items: center;
     font-family: Montzerrat, sans-serif;
     text-align: center;
+    position: relative;
+    font-size: 1.17em;
 }
-.inputTel {
-    background: none;
-    background-color: transparent;
-    font-size: 18px;
+form {
+    margin: 100px;
+}
+
+.input-field {
+    position: relative;
+    height: 44px;
+    line-height: 40px;
+    border-color: black;
+    width: 100%;
+    
+}
+
+label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     color: white;
+    font-size: 16px;
+    transition: 0.3s ;
+    cursor: text;
+    border-color: black;
+    padding-left: 1rem;
+}
+
+input {
+    width: 100%;
+    padding: 0.5rem 0rem;
+    border-bottom: 2px solid white;
+    color: white;
+    font-size: 150%;
+    background: transparent;
+    border-radius: 4px;
+    border: 2px solid white;
+    padding-left: 1rem;
+}
+
+input:hover{
+    border-color: black;
+    
+}
+
+input:invalid {
+    outline: 0;
+}
+input:focus,
+input:valid {
+    border-color: white;
+    border-radius: 3%;
+    font-size: 26px;
+}
+input:focus~label,
+input:valid~label {
+    font-size: 14px;
+    top: -10px;
+    color: white;
+    border-color: black;
 }
