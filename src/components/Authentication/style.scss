@@ -95,3 +95,11 @@ input:valid~label {
     color: white;
     border-color: black;
 }
+.textBox{
+    padding: 2rem;
+    max-width: 23%;
+    @media (min-width: 700px) {
+        width: 40%;
+    }
+}
+
