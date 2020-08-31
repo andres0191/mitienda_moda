@@ -1,33 +1,46 @@
 import React from 'react';
-/* import Auth from './components/Authentication/Auth'; */
 import Home from './components/Home/Home';
 import Category from './components/Category/Category';
 import Catalogs from './components/Catalogs/Catalogs';
 import CarShop from './components/Carshop/Carshop';
-
+import { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
- /*  Link */
 } from "react-router-dom";
+import axios from 'axios'
 
-function App() {
+
+const url = 'https://api.tissini.app/api/v2/categories'
+export default function App() {
+  const [categorias, setCategorias] = useState([]);
+
+  useEffect(() => {
+    axios.get(url)
+    .then(res => {
+      setCategorias(res.data)
+      console.log(res.data)
+    })
+    .catch(error => {
+      console.log(error);
+    })
+  }, []);
+
   return (
     <Router>
       <Switch>
-        <Route path="/Home" /* path='/' */>
+        <Route path="/inicio">
           <Home />
         </Route>
-        <Route path="/Category">
-          Pagina de Categorias
-        < Category />
+        <Route path="/Categorias">
+        < Category cat={categorias} />
         </Route>
-        <Route path="/Catalogs">
+        <Route path="/Catalogo">
           Pagina de Catalogo
           <Catalogs />
         </Route>
-        <Route path="/Carshop">
+        <Route path="/carrito">
           Pagina de Carrito de compras
           <CarShop />
         </Route>
@@ -36,4 +49,4 @@ function App() {
   );
 }
 
-export default App;
+/* <div class="v-image__image v-image__image--cover" style="background-image: url(&quot;https://mitienda.moda/img/productos-de-entrega-inmediata.e07d1e57.png&quot;); background-position: center center;"></div> */

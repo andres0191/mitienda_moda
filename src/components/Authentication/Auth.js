@@ -18,7 +18,7 @@ const handleOnChange = (event) => {
     }
     if(inputText === '786 547 0213' && inputText.length === 12){
         setError(false)
-        History.push('/category')
+        History.push('/Categorias')
     }
     
 }
