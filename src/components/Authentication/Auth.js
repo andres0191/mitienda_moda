@@ -25,9 +25,9 @@ const handleOnChange = (event) => {
                     </h3>
                 </div><br />
                 <div className='input-field'>
-                    <InputMask mask="999 999 9999" maskChar={null} id='name' required className='inputNumber' onChange={handleOnChange}/>               
+                    <InputMask mask="999 999 9999" maskChar={null} id='name' required className='inputNumber' onChange={handleOnChange}/>                        
                     {error ? <p style={{color: '#ff5252', fontSize: '12px'}}>Este número no es valido o no está registrado.</p> : ''}
-                    {error ? <label  style={{color: '#ff5252', fontSize: '12px'}}>Telefono</label> :           <label htmlFor='name'> Telefono: </label>}
+                    {error ? <label  style={{color: '#ff5252', fontSize: '12px'}}>Telefono</label> :  <label htmlFor='name'> Telefono: </label>}
                 </div>
             </div>
         </div>
