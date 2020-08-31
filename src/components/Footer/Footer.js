@@ -4,7 +4,7 @@ import './style.scss';
 export default function Category() {
     return(
         <div>
-            <p>Footer Page</p>
+            <p>footer kevin aiuda po favo</p>
         </div>
     )
 }

@@ -1,17 +1,15 @@
 .header{
-    padding: -1rem;
-    margin-top: 15px;
+    padding: -2rem;
     font-size: 20px;
-    font-size: 20px;
-    font-weight: 500;
-    letter-spacing: .02em;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    position: fixed;
+    background-color: white;
+    width: 100%;    
     color: #f06292;
     -webkit-box-shadow: -2px 9px 6px -7px rgba(0,0,0,0.2);
     -moz-box-shadow: -2px 9px 6px -7px rgba(0,0,0,0.2);
     box-shadow: -2px 9px 6px -7px rgba(0,0,0,0.1);
-    
+    z-index: 2;
+    position: fixed;
 }
 .icons{
     width: 10rem;
