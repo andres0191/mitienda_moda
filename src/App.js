@@ -1,5 +1,5 @@
 import React from 'react';
-import Auth from './components/Authentication/Auth';
+/* import Auth from './components/Authentication/Auth'; */
 import Home from './components/Home/Home';
 import Category from './components/Category/Category';
 import Catalogs from './components/Catalogs/Catalogs';
@@ -9,21 +9,21 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+ /*  Link */
 } from "react-router-dom";
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/Home">
+        <Route path="/Home" /* path='/' */>
           <Home />
         </Route>
         <Route path="/Category">
           Pagina de Categorias
         < Category />
         </Route>
-        <Route path="/Catalog">
+        <Route path="/Catalogs">
           Pagina de Catalogo
           <Catalogs />
         </Route>

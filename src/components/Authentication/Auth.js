@@ -3,14 +3,24 @@ import './style.scss';
 import ImgMiTienda from '../../img/Login/logomitiendamoda.png';
 import InputMask from 'react-input-mask';
 import 'bootstrap/dist/css/bootstrap.css';
-import {useState} from 'react'
+import {useState} from 'react';
+import { useHistory } from "react-router-dom";
 
-export default function Auth() {
-const [error, setError] = useState(false); 
+export default function Auth(props) {
+const [error, setError] = useState(false);
+let History = useHistory()
 const handleOnChange = (event) => {
     const inputText = event.target.value;
-    inputText !== '786 547 0213' && inputText.length === 12 ? setError(true) : setError(false);
-    console.log(inputText)
+    if(inputText !== '786 547 0213' && inputText.length === 12){
+        setError(true)
+    }else{
+        setError(false);
+    }
+    if(inputText === '786 547 0213' && inputText.length === 12){
+        setError(false)
+        History.push('/category')
+    }
+    
 }
 
     return (
@@ -25,7 +35,7 @@ const handleOnChange = (event) => {
                     </h3>
                 </div><br />
                 <div className='input-field'>
-                    <InputMask mask="999 999 9999" maskChar={null} id='name' required className='inputNumber' onChange={handleOnChange}/>                        
+                    <InputMask mask="999 999 9999" maskChar={null} id='name' required className='inputNumber' onChange={handleOnChange}/>
                     {error ? <p style={{color: '#ff5252', fontSize: '12px'}}>Este número no es valido o no está registrado.</p> : ''}
                     {error ? <label  style={{color: '#ff5252', fontSize: '12px'}}>Telefono</label> :  <label htmlFor='name'> Telefono: </label>}
                 </div>
