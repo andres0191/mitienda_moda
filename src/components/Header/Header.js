@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './style.scss';
 import Tel from './Tel/Tel';
 import Logout from './Logout/Logout';
