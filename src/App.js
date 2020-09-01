@@ -10,22 +10,13 @@ import {
   Route,
 } from "react-router-dom";
 import axios from 'axios'
-import { createBrowserHistory } from 'history';
-
 
 const url = 'https://api.tissini.app/api/v2/categories'
 export default function App() {
   const [categorias, setCategorias] = useState([]);
- const [navigation, setNavigation] = useState(false)
-  let History = createBrowserHistory();
-
- 
 
   useEffect(() => {
-    if(!navigation){
-      History.push('/inicio')
-      setNavigation(true)
-    } 
+     
     axios.get(url)
     .then(res => {
       setCategorias(res.data)
@@ -39,9 +30,6 @@ export default function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/inicio">
-          <Home />
-        </Route>
         <Route path="/categorias">
         < Category  cat={categorias}  />
         </Route>
@@ -50,6 +38,9 @@ export default function App() {
         </Route>
         <Route path="/carrito">
           <CarShop />
+        </Route>
+        <Route path="/">
+          <Home />
         </Route>
       </Switch>
     </Router>
