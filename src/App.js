@@ -37,11 +37,9 @@ export default function App() {
         < Category cat={categorias} />
         </Route>
         <Route path="/Catalogo">
-          Pagina de Catalogo
           <Catalogs />
         </Route>
         <Route path="/carrito">
-          Pagina de Carrito de compras
           <CarShop />
         </Route>
       </Switch>
