@@ -10,17 +10,27 @@ import {
   Route,
 } from "react-router-dom";
 import axios from 'axios'
+import { createBrowserHistory } from 'history';
 
 
 const url = 'https://api.tissini.app/api/v2/categories'
 export default function App() {
   const [categorias, setCategorias] = useState([]);
+ const [navigation, setNavigation] = useState(false)
+  let History = createBrowserHistory();
+
+ 
 
   useEffect(() => {
+    if(!navigation){
+      History.push('/inicio')
+      setNavigation(true)
+    } 
+   console.log('holi')
     axios.get(url)
     .then(res => {
       setCategorias(res.data)
-      console.log(res.data)
+      console.log(res.data)    
     })
     .catch(error => {
       console.log(error);
@@ -33,8 +43,8 @@ export default function App() {
         <Route path="/inicio">
           <Home />
         </Route>
-        <Route path="/Categorias">
-        < Category cat={categorias} />
+        <Route path="/categorias">
+        < Category  cat={categorias}  />
         </Route>
         <Route path="/Catalogo">
           <Catalogs />
@@ -47,4 +57,3 @@ export default function App() {
   );
 }
 
-/* <div class="v-image__image v-image__image--cover" style="background-image: url(&quot;https://mitienda.moda/img/productos-de-entrega-inmediata.e07d1e57.png&quot;); background-position: center center;"></div> */

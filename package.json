@@ -13,6 +13,8 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.20.0",
     "bootstrap": "^4.5.2",
+    "create-history": "^2.1.1",
+    "history": "^5.0.0",
     "material-icons": "^0.3.1",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
@@ -24,11 +26,13 @@
     "typeface-montserrat": "0.0.75"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "react-scripts start",
+    "start": "serve -s build",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
+    "test": "react-scripts test --env = jsdom ",
+    "eject": "react-scripts eject ",
+    "heroku-postbuild": "npm run build"
+    },
   "eslintConfig": {
     "extends": "react-app"
   },
