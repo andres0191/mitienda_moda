@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 
 
 const imagenes=[]
+const precio=[]
 const url='https://api.tissini.app/api/v2/categories/60/products';
 
 export default function Catalogs() {
@@ -52,7 +53,7 @@ useEffect(() => {
                 <div>
                     {imagenes.map((item, key) => (
                         <div>
-                            <img src={`https://api.tissini.app${item}`} />
+                            <img className='catalog mx-auto d-block' src={`https://api.tissini.app${item}`} />
                         </div>
                             
                     ))}
