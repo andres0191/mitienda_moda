@@ -4,16 +4,13 @@ import Category from './components/Category/Category';
 import Catalogs from './components/Catalogs/Catalogs';
 import CarShop from './components/Carshop/Carshop';
 import { useEffect, useState } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
-import axios from 'axios'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import axios from 'axios';
 
 const url = 'https://api.tissini.app/api/v2/categories'
 export default function App() {
   const [categorias, setCategorias] = useState([]);
+  
 
   useEffect(() => {
      

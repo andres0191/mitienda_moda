@@ -30,8 +30,36 @@
     margin-top: 80px;
 }
 .catalog{
-    width: 322.75px;
+    width: 380.75px;
     height: 340px;
-    margin: 50px;
-    padding: 8px;
+    margin: 12px;
+}
+.precio{
+    font-size: 20px;
+    align-items: center;
+    color: #f06292;
+}
+.buttom{
+    width: 380.75px;
+    margin-bottom: 20px;
+    -webkit-box-shadow: -1px 3px 6px -1px rgba(0,0,0,0.2);
+    -moz-box-shadow: -1px 3px 6px -1px rgba(0,0,0,0.2);
+    box-shadow: -1px 3px 6px -1px rgba(0,0,0,0.1);
+}
+.butAdd{
+    color: white;
+    border-radius: 20px;
+    background-color: #f06292;
+    width: 80px;
+    text-align: center;
+    cursor: pointer;
+}
+.butAdd:active {
+    background: rgba(177, 0, 0, 0.1);
+    -webkit-box-shadow: -1px 3px 42px -1px rgba(0,0,0,0.35);
+-moz-box-shadow: -1px 3px 42px -1px rgba(0,0,0,0.35);
+box-shadow: -1px 3px 42px -1px rgba(0,0,0,0.35);
+}
+.butAdd:hover{
+    opacity: 50%;
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './style.scss';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
@@ -7,19 +7,21 @@ import { useEffect } from 'react';
 
 
 const imagenes=[]
-const precio=[]
 const url='https://api.tissini.app/api/v2/categories/60/products';
 
 export default function Catalogs() {
+    const [imgs, setImgs] = useState([])
 
 useEffect(() => {
     axios.get(url).then(response => {
         response.data.products.forEach((element) => {
             element.images.forEach(item => {
-                imagenes.push(item.url);
-                console.log(item.url)
+                imagenes.push({
+                    url:item.url, precio:element.price
+                });
             })
         });
+        setImgs(imagenes)
     })
 },[])
     
@@ -51,11 +53,20 @@ useEffect(() => {
             </div>
             <div>
                 <div>
-                    {imagenes.map((item, key) => (
-                        <div>
-                            <img className='catalog mx-auto d-block' src={`https://api.tissini.app${item}`} />
+                    {imgs.map((item, key) => (
+                        <div className='d-flex flex-column align-items-center'>
+                            <div >
+                                <img className='catalog' src={`https://api.tissini.app${item.url}`} alt='imagen-catalogo' />
+                            </div>
+                            <div className='buttom justify-content-between d-flex'>
+                                <div className='butAdd d-flex align-items-center justify-content-center '>
+                                    Agregar
+                                </div>
+                                <h1 className='precio'>
+                                    $ {item.precio}
+                                </h1>
+                            </div>
                         </div>
-                            
                     ))}
                 </div>
             </div>

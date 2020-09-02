@@ -22,6 +22,7 @@
     "react-input-mask": "^2.0.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
+    "serve": "^11.3.2",
     "sweetalert2": "^9.17.1",
     "typeface-montserrat": "0.0.75"
   },
